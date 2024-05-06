@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{0E081A03-92B6-4F18-8950-B1A3AAD5789B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BafflerStandalone</RootNamespace>
+    <AssemblyName>BafflerStandalone</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>BafflerStandalone.ico</ApplicationIcon>
+    <StartupObject>BafflerStandalone.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.ShockwaveFlashObjects">
+      <HintPath>D:\Programs\Virtualization\Baffler Standalone v2.2.4\AxInterop.ShockwaveFlashObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.ShockwaveFlashObjects">
+      <HintPath>D:\Programs\Virtualization\Baffler Standalone v2.2.4\Interop.ShockwaveFlashObjects.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ShockwaveFlashObjects">
+      <HintPath>Libraries\ShockwaveFlashObjects.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="SQLite">
+      <HintPath>Libraries\SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>D:\Programs\Virtualization\Baffler Standalone v2.2.4\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomToolStripButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Database\Database.cs" />
+    <Compile Include="Database\DatabaseConfigAccess.cs" />
+    <Compile Include="Database\DatabaseManager.cs" />
+    <Compile Include="Database\dbServers.cs" />
+    <Compile Include="Database\mgrDBServerList.cs" />
+    <Compile Include="Database\RSS\Rss.cs" />
+    <Compile Include="Database\RSS\RssManager.cs" />
+    <Compile Include="FlashPlayer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\HotKey\HotKeyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HotKey\HotKeyForm.Designer.cs">
+      <DependentUpon>HotKeyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Options\Options.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Options\Options.Designer.cs">
+      <DependentUpon>Options.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QuickAlign\QuickAlign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QuickAlign\QuickAlign.Designer.cs">
+      <DependentUpon>QuickAlign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ServerDialog\ServerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ServerDialog\ServerDialog.Designer.cs">
+      <DependentUpon>ServerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ServerList\ServerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ServerList\ServerList.Designer.cs">
+      <DependentUpon>ServerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotKeyAction.cs" />
+    <Compile Include="HotKeyActionItem.cs" />
+    <Compile Include="HotKeys.cs" />
+    <Compile Include="HotKeysAdder.cs" />
+    <Compile Include="HotKeysItem.cs" />
+    <Compile Include="HotKeysManager.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RoundedRectangle.cs" />
+    <Compile Include="ServerInfo.cs" />
+    <Compile Include="SizeablePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SizePanelPosition.cs" />
+    <Compile Include="StickyWindow.cs" />
+    <Compile Include="TabInfo.cs" />
+    <Compile Include="Utilities.cs" />
+    <Compile Include="Win32.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\HotKey\HotKeyForm.resources" />
+    <EmbeddedResource Include="Forms\Options\Options.resources" />
+    <EmbeddedResource Include="Forms\QuickAlign\QuickAlign.resources" />
+    <EmbeddedResource Include="Forms\ServerDialog\ServerDialog.resources" />
+    <EmbeddedResource Include="Forms\ServerList\ServerList.resources" />
+    <EmbeddedResource Include="MainForm.resources" />
+    <EmbeddedResource Include="Properties\Resources.resources" />
+    <EmbeddedResource Include="System\Data\SQLite.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\Hotkeys\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
